@@ -2,7 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { SigninService } from './signin.service';
 import { SigninDto } from '../../auth/dto/signin.dto';
 import { Public } from 'src/utils/decorators/public.decorator';
-import { SigninOutput } from '../dto/signin.output';
+import { SigninOutput } from '../dto/outputs/signin.output';
 
 @Controller()
 export class SigninController {

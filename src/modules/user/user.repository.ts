@@ -24,15 +24,32 @@ export class UserRepository implements BaseRepositoryInterface<User> {
     pagination?: { skip: number; take: number };
     where?: { ids: string[] };
   }): Promise<Partial<User>[]> {
+
+    const { ids } = params.where;
+    const { skip, take } = params.pagination || { skip: 0, take: 10 };
+
     return this.repository.find({
       where: {
-        id: In(params.where.ids),
+        id: ids ? In(ids) : undefined,
       },
+      skip,
+      take,
+      select:{
+        balance: true , 
+        username: true,
+        id: true, 
+        birthdate: true,
+      }
     });
   }
 
-  count(where?: Object): Promise<number> {  
-    throw new Error('Method not implemented.');
+  count(where?: { ids: string[] }): Promise<number> {  
+    const { ids } = where;
+    return this.repository.count({
+      where: {
+        id: ids ? In(ids) : undefined,
+      },
+    });
   }
 
   create(data: SignupDto): Promise<Partial<User>> {

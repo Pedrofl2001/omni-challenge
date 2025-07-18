@@ -7,6 +7,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { TransferModule } from './modules/transfer/transfer.module';
 import { RouterModule } from '@nestjs/core';
 import { Algorithm } from 'jsonwebtoken';
+import { routes } from './routes';
 
 @Module({
   imports: [
@@ -23,12 +24,7 @@ import { Algorithm } from 'jsonwebtoken';
     UserModule,
     AuthModule,
     TransferModule,
-    RouterModule.register([
-      {
-        path: 'transfer',
-        module: TransferModule,
-      },
-    ]),
+    RouterModule.register(routes),
   ],
   controllers: [],
   providers: [],

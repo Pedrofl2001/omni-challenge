@@ -29,10 +29,9 @@ async execute(body: CreateTransferInput): Promise<void> {
     fromUser.balance -= body.amount;
     toUser.balance += body.amount;
 
-   const fromUserUpdated = await this.userRepository.update(fromUser.id, {balance: fromUser.balance});
-    const toUserUpdated = await this.userRepository.update(toUser.id, {balance: toUser.balance});
+    await this.userRepository.update(fromUser.id, {balance: fromUser.balance});
+    await this.userRepository.update(toUser.id, {balance: toUser.balance});
 
-    console.log(fromUserUpdated, toUserUpdated);
 
     await this.transferRepository.create(body);
 
