@@ -1,6 +1,6 @@
 # 💰 API de Transações Monetárias - Desafio Omni Saúde
 
-> **Desafio Técnico da [Omni Saúde](https://omni.com.br/)** - Este projeto foi desenvolvido como parte do processo seletivo para demonstrar habilidades em desenvolvimento backend com NestJS, TypeScript e boas práticas de desenvolvimento.
+> **Desafio Técnico da [Omni Saúde](https://www.omnisaude.app/)** - Este projeto foi desenvolvido como parte do processo seletivo para demonstrar habilidades em desenvolvimento backend com NestJS, TypeScript e boas práticas de desenvolvimento.
 
 ## 🚀 Tecnologias e Funcionalidades
 
@@ -93,7 +93,7 @@ A base URL é `http://localhost:3000`.
 {
   "fromId": "uuid-de-origem",
   "toId": "uuid-de-destino",
-  "amount": 100.50
+  "amount": 100
 }
 ```
 **Response (204 No Content)**
@@ -113,7 +113,7 @@ A base URL é `http://localhost:3000`.
       "id": "uuid-do-usuario",
       "username": "joao.silva",
       "birthdate": "1990-05-15",
-      "balance": 1500.75
+      "balance": 1500
     }
   ],
   "totalCount": 1,
