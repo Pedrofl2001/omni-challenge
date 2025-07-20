@@ -53,7 +53,7 @@ export class UserRepository implements BaseRepositoryInterface<User> {
   }
 
   create(data: SignupDto): Promise<Partial<User>> {
-    return this.repository.insert(data).then(result => ({ id: result.identifiers[0].id }));
+    return this.repository.insert({...data, balance: 100}).then(result => ({ id: result.identifiers[0].id }));
   }
 
   update(id: string, data: {balance: number}): Promise<Partial<User>> {

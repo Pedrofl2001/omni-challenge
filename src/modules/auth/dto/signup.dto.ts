@@ -3,14 +3,12 @@ import { IsString, IsNotEmpty, MinLength, MaxLength  } from "class-validator";
 export class SignupDto {
   @IsString()
   @IsNotEmpty()
-  @MinLength(11)
-  @MaxLength(11)
   username: string;
 
-  @IsString()
+  @IsString({message: 'A senha deve ser uma string'})
   @IsNotEmpty()
-  @MinLength(8)
-  @MaxLength(20)
+  @MinLength(8, {message: 'A senha deve ter pelo menos 8 caracteres'})
+  @MaxLength(20, {message: 'A senha deve ter no máximo 20 caracteres'})
   password: string;
 
   @IsString()
