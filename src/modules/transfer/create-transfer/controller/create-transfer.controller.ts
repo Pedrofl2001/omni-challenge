@@ -1,6 +1,6 @@
 import { Body, Controller, HttpCode, Post } from "@nestjs/common";
-import { CreateTransferService } from "./create-transfer.service";
-import { CreateTransferInput } from "../dto/create-transfer.input";
+import { CreateTransferService } from "../service/create-transfer.service";
+import { CreateTransferInput } from "../../dto/create-transfer.input";
 
 @Controller()
 export class CreateTransferController {

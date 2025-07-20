@@ -1,7 +1,7 @@
 import { Controller, Get, Query, UseGuards } from "@nestjs/common";
-import { FindManyUsersService } from "./find-many-users.service";
-import { FindManyUsersInput } from "../dto/inputs/find-many-users.input";
-import { FindManyUsersOutput } from "../dto/outputs/find-many-users.output";
+import { FindManyUsersService } from "../service/find-many-users.service";
+import { FindManyUsersInput } from "../../dto/inputs/find-many-users.input";
+import { FindManyUsersOutput } from "../../dto/outputs/find-many-users.output";
 
 @Controller()
 export class FindManyUsersController {

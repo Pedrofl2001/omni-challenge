@@ -1,16 +1,16 @@
 import { Module } from '@nestjs/common';
-import { FindPersonByPayloadService } from './find-person-by-payload/find-person-by-payload.service';
+import { FindPersonByPayloadService } from './find-person-by-payload/service/find-person-by-payload.service';
 import { UserRepository } from './user.repository';
 import { DatabaseModule } from '../database/database.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
-import { SignupService } from './signup/signup.service';
-import { SignupController } from './signup/signup.controller';
-import { SigninController } from './signin/signin.controller';
-import { SigninService } from './signin/signin.service';
-import { ValidateUserService } from './validate-user/validate-user.service';
-import { FindManyUsersService } from './find-many-users/find-many-users.service';
-import { FindManyUsersController } from './find-many-users/find-many-users.controller';
+import { SignupService } from './signup/service/signup.service';
+import { SignupController } from './signup/controller/signup.controller';
+import { SigninController } from './signin/controller/signin.controller';
+import { SigninService } from './signin/service/signin.service';
+import { ValidateUserService } from './validate-user/service/validate-user.service';
+import { FindManyUsersService } from './find-many-users/service/find-many-users.service';
+import { FindManyUsersController } from './find-many-users/controller/find-many-users.controller';
 
 @Module({
   imports: [DatabaseModule, TypeOrmModule.forFeature([User])],

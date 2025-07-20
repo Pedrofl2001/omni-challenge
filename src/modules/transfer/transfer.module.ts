@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Transfer } from './entities/transfer.entity';
-import { CreateTransferController } from './create-transfer/create-transfer.controller';
-import { CreateTransferService } from './create-transfer/create-transfer.service';
+import { CreateTransferController } from './create-transfer/controller/create-transfer.controller';
+import { CreateTransferService } from './create-transfer/service/create-transfer.service';
 import { TransferRepository } from './transfer.repository';
 import { UserRepository } from '../user/user.repository';
   

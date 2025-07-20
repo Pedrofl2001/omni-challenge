@@ -1,9 +1,10 @@
 import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { UserRepository} from '../../user/user.repository';
-import { SigninDto } from '../../auth/dto/signin.dto';
+import { UserRepository} from 'src/modules/user/user.repository';
+import { SigninDto } from 'src/modules/auth/dto/signin.dto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt'; 
-import { SigninOutput } from '../dto/outputs/signin.output';  
+import { SigninOutput } from '../../dto/outputs/signin.output';  
+
 @Injectable()
 export class SigninService {
   constructor(private readonly userRepository: UserRepository, private readonly jwtService: JwtService) {}

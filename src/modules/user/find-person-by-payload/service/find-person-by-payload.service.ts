@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { JwtPayload } from 'src/utils/interfaces/jwt-payload.interface';
-import { User } from '../entities/user.entity';
-import { UserRepository } from '../user.repository';
+import { User } from 'src/modules/user/entities/user.entity';
+import { UserRepository } from 'src/modules/user/user.repository';
 
 @Injectable()
 export class FindPersonByPayloadService {

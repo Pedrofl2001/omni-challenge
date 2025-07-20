@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { UserRepository } from "../user.repository";
-import { FindManyUsersInput } from "../dto/inputs/find-many-users.input";
-import { FindManyUsersOutput } from "../dto/outputs/find-many-users.output";
+import { UserRepository } from "../../user.repository";
+import { FindManyUsersInput } from "../../dto/inputs/find-many-users.input";
+import { FindManyUsersOutput } from "../../dto/outputs/find-many-users.output";
 
 @Injectable()
 export class FindManyUsersService {

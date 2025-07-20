@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
-import { TransferRepository } from "../transfer.repository";
-import { CreateTransferInput } from "../dto/create-transfer.input";
+import { TransferRepository } from "../../transfer.repository";
+import { CreateTransferInput } from "../../dto/create-transfer.input";
 import { UserRepository } from "src/modules/user/user.repository";
 
 @Injectable()
@@ -8,6 +8,10 @@ export class CreateTransferService {
   constructor(private readonly transferRepository: TransferRepository, private readonly userRepository: UserRepository) {}
 
 async execute(body: CreateTransferInput): Promise<void> {
+
+  if (body.fromId === body.toId) {
+    throw new BadRequestException('Não é possível transferir para o mesmo usuário');
+  }
 
     const totalUsers = 2;
 

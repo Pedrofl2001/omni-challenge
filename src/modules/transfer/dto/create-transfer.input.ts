@@ -1,12 +1,17 @@
-import { IsString } from "class-validator";
+import { IsNotEmpty, IsString } from "class-validator";
 import { IsNumber } from "class-validator";
 
 export class CreateTransferInput{
-  @IsString() 
+  @IsString()
+  @IsNotEmpty()
   fromId: string;
+  
   @IsString() 
+  @IsNotEmpty()
   toId: string;
+  
   @IsNumber()
+  @IsNotEmpty()
   amount: number;
  
 }
